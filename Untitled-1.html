@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Cube Services</title>
+    <style>
+        .all {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            color: rgb(208, 120, 120);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #scene {
+            width: 200px;
+            height: 200px;
+            perspective: 600px;
+        }
+
+        #cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(0deg) rotateY(0deg);
+            transition: transform 1s;
+            cursor: pointer;
+        }
+
+        .face {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: black;
+        }
+
+        .front  { transform: rotateY(0deg) translateZ(100px); }
+        .back   { transform: rotateY(180deg) translateZ(100px); }
+        .right  { transform: rotateY(90deg) translateZ(100px); }
+        .left   { transform: rotateY(-90deg) translateZ(100px); }
+        .top    { transform: rotateX(90deg) translateZ(100px); }
+        .bottom { transform: rotateX(-90deg) translateZ(100px); }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <div id="scene">
+            <div id="cube">
+                <div class="face front">
+                    <h3>Consulting IA</h3>
+                    <p>Services de conseil en intelligence artificielle</p>
+                </div>
+                <div class="face back">
+                    <h3>Développement</h3>
+                    <p>Solutions personnalisées d'IA</p>
+                </div>
+                <div class="face right">
+                    <h3>Formation</h3>
+                    <p>Cours et workshops IA</p>
+                </div>
+                <div class="face left">
+                    <h3>Analyse de Données</h3>
+                    <p>Traitement et insights</p>
+                </div>
+                <div class="face top">
+                    <h3>Intégration</h3>
+                    <p>Solutions IA d'entreprise</p>
+                </div>
+                <div class="face bottom">
+                    <h3>Support Technique</h3>
+                    <p>Assistance continue</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const cube = document.getElementById("cube");
+        let currentFace = 0;
+        const faces = ['front', 'right', 'back', 'left', 'top', 'bottom'];
+
+        cube.addEventListener("click", function () {
+            currentFace = (currentFace + 1) % faces.length;
+            
+            switch (faces[currentFace]) {
+                case "front":
+                    cube.style.transform = "rotateX(0deg) rotateY(0deg)";
+                    break;
+                case "back":
+                    cube.style.transform = "rotateX(0deg) rotateY(180deg)";
+                    break;
+                case "left":
+                    cube.style.transform = "rotateX(0deg) rotateY(-90deg)";
+                    break;
+                case "right":
+                    cube.style.transform = "rotateX(0deg) rotateY(90deg)";
+                    break;
+                case "top":
+                    cube.style.transform = "rotateX(-90deg) rotateY(0deg)";
+                    break;
+                case "bottom":
+                    cube.style.transform = "rotateX(90deg) rotateY(0deg)";
+                    break;
+            }
+        });
+    });
+    </script>
+</body>
+</html>
