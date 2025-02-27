@@ -37,7 +37,7 @@ nav ul {
     list-style: none;
     padding: 10px;
     margin: 0;
-    background-image: url('pic2.jpg');
+    background-image: url('img/pic2.jpg');
     background-size: cover;
     background-position: center;
     transition: background-position 1s ease-in-out;
@@ -45,7 +45,7 @@ nav ul {
 
 /* Effet au survol */
 nav ul:hover {
-    background-position: top center; /* Déplace l'image pour simuler un changement */
+    background-position: top center; 
 }
 
 nav ul li {
@@ -211,7 +211,7 @@ nav ul li a:hover {
     margin: 50px auto;
 }
 
-/* __________________________________________________ */
+/*home __________________________________________________ */
 #home {
     display: flex;
     justify-content: space-between;
@@ -318,20 +318,20 @@ nav ul li a:hover {
         transform: scale(1);
     }
 }
-/* ---------------------------------------------------- */
+/* services---------------------------------------------------- */
 #services {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 60px 30px;
-    background-image: url('pic2.jpeg');
+    background-image: url('img/pic2.jpg');
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     margin: 20px auto;
     max-width: 1200px;
     color: white;
     animation: fadeIn 1.2s ease-out;
-    background-image: url('pic.jpg');
+    background-image: url('img/pic.jpg');
     background-size: cover; /* Ajuste l'image pour couvrir toute la page */
     background-position: center; /* Centre l'image */
     background-repeat: no-repeat; /* Évite la répétition */
@@ -455,7 +455,7 @@ nav ul li a:hover {
 
 /* _____________________________ */
 #technologie {
-    background-image: url('pic4.jpg') ;
+    background-image: url('img/pic4.jpg') ;
     border-radius: 7PX;
     /* or */
     background-size: 100% 100%; /* width height */
@@ -484,7 +484,7 @@ nav ul li a:hover {
 
 
 .tech-list {
-    background-image: url('pic3.jpg');
+    background-image: url('img/pic3.jpg');
     border-radius: 7PX;
  
     /* or */
